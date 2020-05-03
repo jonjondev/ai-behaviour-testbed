@@ -1,8 +1,8 @@
 class_name BeaconAppearedTransition
 extends Transition
 
-func _init():
-	next_state = load("res://scripts/FSM/states/AttackBeaconState.gd").new()
+func _init(owner).(owner):
+	pass
 
 func is_valid():
 	return agent_body.get_tree().get_nodes_in_group("beacon")[0].visible

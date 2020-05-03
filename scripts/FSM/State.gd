@@ -1,7 +1,9 @@
 class_name State
 
-var agent_body
-var transitions
+var owner: Node
+
+func _init(o):
+	owner = o
 
 func on_enter():
 	pass

@@ -3,6 +3,9 @@ extends State
 
 var target
 
+func _init(owner).(owner):
+	pass
+
 func on_enter():
 	transitions = [BeaconDisappearedTransition.new()]
 	target = agent_body.get_tree().get_nodes_in_group("beacon")[0]

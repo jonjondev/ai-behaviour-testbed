@@ -1,7 +1,9 @@
 class_name Transition
 
-var agent_body
-var next_state: State
+var owner: Node
+
+func _init(o):
+	owner = o
 
 func is_valid():
 	pass
