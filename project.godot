@@ -8,15 +8,74 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "AgentMovement",
+"language": "GDScript",
+"path": "res://scripts/AgentMovement.gd"
+}, {
+"base": "State",
+"class": "AttackBeaconState",
+"language": "GDScript",
+"path": "res://scripts/FSM/states/AttackBeaconState.gd"
+}, {
+"base": "Transition",
+"class": "BeaconAppearedTransition",
+"language": "GDScript",
+"path": "res://scripts/FSM/transitions/BeaconAppearedTransition.gd"
+}, {
+"base": "Transition",
+"class": "BeaconDisappearedTransition",
+"language": "GDScript",
+"path": "res://scripts/FSM/transitions/BeaconDisappearedTransition.gd"
+}, {
+"base": "Transition",
+"class": "NavigatedToDoorTransition",
+"language": "GDScript",
+"path": "res://scripts/FSM/transitions/NavigatedToDoorTransition.gd"
+}, {
+"base": "Transition",
+"class": "NavigatedToSafeTransition",
+"language": "GDScript",
+"path": "res://scripts/FSM/transitions/NavigatedToSafeTransition.gd"
+}, {
+"base": "State",
+"class": "PatrolDoorState",
+"language": "GDScript",
+"path": "res://scripts/FSM/states/PatrolDoorState.gd"
+}, {
+"base": "State",
+"class": "PatrolSafeState",
+"language": "GDScript",
+"path": "res://scripts/FSM/states/PatrolSafeState.gd"
+}, {
+"base": "Reference",
+"class": "State",
+"language": "GDScript",
+"path": "res://scripts/FSM/State.gd"
+}, {
+"base": "Reference",
+"class": "Transition",
+"language": "GDScript",
+"path": "res://scripts/FSM/Transition.gd"
+} ]
 _global_script_class_icons={
-
+"AgentMovement": "",
+"AttackBeaconState": "",
+"BeaconAppearedTransition": "",
+"BeaconDisappearedTransition": "",
+"NavigatedToDoorTransition": "",
+"NavigatedToSafeTransition": "",
+"PatrolDoorState": "",
+"PatrolSafeState": "",
+"State": "",
+"Transition": ""
 }
 
 [application]
 
 config/name="AI Behaviour Testbed"
-run/main_scene="res://FiniteStateMachineTest.tscn"
+run/main_scene="res://scenes/FiniteStateMachineTest.tscn"
 config/icon="res://icon.png"
 
 [rendering]
