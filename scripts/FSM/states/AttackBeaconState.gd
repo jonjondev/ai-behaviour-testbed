@@ -7,11 +7,10 @@ func _init(owner).(owner):
 	pass
 
 func on_enter():
-	transitions = [BeaconDisappearedTransition.new()]
-	target = agent_body.get_tree().get_nodes_in_group("beacon")[0]
+	target = owner.get_tree().get_nodes_in_group("beacon")[0]
 
 func on_update(delta):
-	agent_body.agent_movement.move_towards(agent_body, target, delta)
+	owner.move_towards(target, delta)
 
 func on_exit():
 	pass

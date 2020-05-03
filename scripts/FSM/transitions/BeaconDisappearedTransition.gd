@@ -5,7 +5,7 @@ func _init(owner).(owner):
 	pass
 
 func is_valid():
-	return not agent_body.current_state.target.visible
+	return not owner.get_tree().get_nodes_in_group("beacon")[0].visible
 
 func on_transition():
 	pass
