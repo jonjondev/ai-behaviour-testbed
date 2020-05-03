@@ -1,21 +1,38 @@
-extends KinematicBody
+class_name FiniteStateMachine
 
-var agent_movement = AgentMovement.new()
-var current_state: State = PatrolDoorState.new()
+var owner: Node
+var current_state = PatrolDoorState
+var transition_state_map = {
+	PatrolDoorState: [
+		[NavigatedToDoorTransition, PatrolSafeState],
+		[BeaconAppearedTransition, AttackBeaconState],
+	],
+	PatrolSafeState: [
+		[NavigatedToSafeTransition, PatrolDoorState],
+		[BeaconAppearedTransition, AttackBeaconState],
+	],
+	AttackBeaconState: [
+		[BeaconDisappearedTransition, PatrolDoorState],
+	],
+}
 
-func _ready():
-	current_state.agent_body = self
+func _init(o):
+	owner = o
+	current_state = current_state.new(owner)
+	for state in transition_state_map.keys():
+		for transition_state in transition_state_map[state]:
+			transition_state[0] = transition_state[0].new(owner)
+
+func on_start():
 	current_state.on_enter()
 
-func _physics_process(delta):
-	for transition in current_state.transitions:
-		transition.agent_body = self
-		if transition.is_valid():
+func on_update(delta):
+	var transition_states = transition_state_map[current_state.get_script()]
+	for transition_state in transition_states:
+		if transition_state[0].is_valid():
 			current_state.on_exit()
-			transition.agent_body = self
-			transition.on_transition()
-			current_state = transition.next_state
-			current_state.agent_body = self
+			transition_state[0].on_transition()
+			current_state = transition_state[1].new(owner)
 			current_state.on_enter()
 			break
 	current_state.on_update(delta)
