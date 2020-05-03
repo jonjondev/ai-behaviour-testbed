@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Target.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 1, 0.345098, 0.760784, 1 )
+
+[sub_resource type="CylinderMesh" id=5]
+material = SubResource( 4 )
+top_radius = 0.001
+bottom_radius = 0.3
+height = 1.0
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.144105, 0.298731, 0.098805 )
+
+[node name="Target" type="Spatial" groups=[
+"target",
+]]
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 6 )
