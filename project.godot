@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "AgentMovement",
-"language": "GDScript",
-"path": "res://scripts/AgentMovement.gd"
-}, {
 "base": "State",
 "class": "AttackBeaconState",
 "language": "GDScript",
@@ -28,6 +23,11 @@ _global_script_classes=[ {
 "class": "BeaconDisappearedTransition",
 "language": "GDScript",
 "path": "res://scripts/FSM/transitions/BeaconDisappearedTransition.gd"
+}, {
+"base": "Reference",
+"class": "FiniteStateMachine",
+"language": "GDScript",
+"path": "res://scripts/FSM/FiniteStateMachine.gd"
 }, {
 "base": "Transition",
 "class": "NavigatedToDoorTransition",
@@ -60,10 +60,10 @@ _global_script_classes=[ {
 "path": "res://scripts/FSM/Transition.gd"
 } ]
 _global_script_class_icons={
-"AgentMovement": "",
 "AttackBeaconState": "",
 "BeaconAppearedTransition": "",
 "BeaconDisappearedTransition": "",
+"FiniteStateMachine": "",
 "NavigatedToDoorTransition": "",
 "NavigatedToSafeTransition": "",
 "PatrolDoorState": "",
