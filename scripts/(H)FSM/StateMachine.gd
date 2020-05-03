@@ -1,4 +1,4 @@
-class_name FiniteStateMachine
+class_name StateMachine
 
 var owner: Node
 var current_state = PatrolDoorState

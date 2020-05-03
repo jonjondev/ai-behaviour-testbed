@@ -18,7 +18,6 @@ func move_towards(target, delta):
 	if target and translation.distance_to(target.translation) > 0.1:
 		move = (target.translation - translation).normalized() * move_speed
 		move.y = 0
-	
 	velocity = move_and_slide(move + (velocity + gravity * delta))
 	velocity = Vector3(0, velocity.y, 0)
 
