@@ -2,6 +2,7 @@ class_name StateMachine
 
 var owner: Node
 var current_state = PatrolDoorState
+var instanced_states = []
 var transition_state_map = {
 	PatrolDoorState: [
 		[NavigatedToDoorTransition, PatrolSafeState],
@@ -32,7 +33,15 @@ func on_update(delta):
 		if transition_state[0].is_valid():
 			current_state.on_exit()
 			transition_state[0].on_transition()
-			current_state = transition_state[1].new(owner)
+			current_state = get_state(transition_state[1])
 			current_state.on_enter()
 			break
 	current_state.on_update(delta)
+
+func get_state(state_class):
+	for state in instanced_states:
+		if state is state_class:
+			return state
+	var new_state = state_class.new(owner)
+	instanced_states.append(new_state)
+	return new_state
