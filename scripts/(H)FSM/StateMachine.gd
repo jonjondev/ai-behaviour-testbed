@@ -24,7 +24,7 @@ func _init(o):
 		for transition_state in transition_state_map[state]:
 			transition_state[0] = transition_state[0].new(owner)
 
-func on_start():
+func on_enter():
 	current_state.on_enter()
 
 func on_update(delta):

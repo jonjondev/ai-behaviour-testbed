@@ -8,7 +8,7 @@ var velocity: Vector3 = Vector3.ZERO
 
 func _ready():
 	behaviour_algorithm = behaviour_algorithm.new(self)
-	behaviour_algorithm.on_start()
+	behaviour_algorithm.on_enter()
 
 func _physics_process(delta):
 	behaviour_algorithm.on_update(delta)
