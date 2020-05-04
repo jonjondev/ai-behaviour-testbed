@@ -1,30 +1,21 @@
 class_name StateMachine
+extends State
 
-var owner: Node
-var current_state = PatrolDoorState
+var current_state
 var instanced_states = []
-var transition_state_map = {
-	PatrolDoorState: [
-		[NavigatedToDoorTransition, PatrolSafeState],
-		[BeaconAppearedTransition, AttackBeaconState],
-	],
-	PatrolSafeState: [
-		[NavigatedToSafeTransition, PatrolDoorState],
-		[BeaconAppearedTransition, AttackBeaconState],
-	],
-	AttackBeaconState: [
-		[BeaconDisappearedTransition, PatrolDoorState],
-	],
-}
+var transition_state_map = {}
 
-func _init(o):
-	owner = o
+func _init(o).(o):
+	pass
+
+func setup():
 	current_state = current_state.new(owner)
 	for state in transition_state_map.keys():
 		for transition_state in transition_state_map[state]:
 			transition_state[0] = transition_state[0].new(owner)
 
 func on_enter():
+	instanced_states.append(current_state)
 	current_state.on_enter()
 
 func on_update(delta):
@@ -37,6 +28,9 @@ func on_update(delta):
 			current_state.on_enter()
 			break
 	current_state.on_update(delta)
+
+func on_exit():
+	pass
 
 func get_state(state_class):
 	for state in instanced_states:
