@@ -93,7 +93,7 @@ _global_script_class_icons={
 [application]
 
 config/name="AI Behaviour Testbed"
-run/main_scene="res://scenes/FiniteStateMachineTest.tscn"
+run/main_scene="res://scenes/HFSMTest.tscn"
 config/icon="res://icon.png"
 
 [rendering]
