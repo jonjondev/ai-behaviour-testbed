@@ -21,5 +21,5 @@ func move_towards(target, delta):
 	velocity = move_and_slide(move + (velocity + gravity * delta))
 	velocity = Vector3(0, velocity.y, 0)
 
-func is_near_target(target):
+func is_near(target):
 	return target and translation.distance_to(target.translation) < 0.2
