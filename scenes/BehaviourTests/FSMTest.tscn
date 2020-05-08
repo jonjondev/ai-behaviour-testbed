@@ -1,33 +1,34 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scripts/(H)FSM/state_machines/HierarchicalStateMachine.gd" type="Script" id=1]
-[ext_resource path="res://scripts/Beacon.gd" type="Script" id=2]
-[ext_resource path="res://scenes/Target.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Agent.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/BasicEnvironment.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/(H)FSM/state_machines/FiniteStateMachine.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Components/Target.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Components/Agent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Components/BasicEnvironment.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/Beacon.gd" type="Script" id=5]
 
-[node name="Spatial" instance=ExtResource( 5 )]
 
-[node name="Agent" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Spatial" instance=ExtResource( 4 )]
+
+[node name="Agent" parent="." index="2" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1191, 0 )
 behaviour_algorithm = ExtResource( 1 )
 
 [node name="Door" parent="." index="3" groups=[
 "door",
-] instance=ExtResource( 3 )]
+] instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61371, 0.529552, 4.3099 )
 
 [node name="Safe" parent="." index="4" groups=[
 "safe",
-] instance=ExtResource( 3 )]
+] instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70365, 0.529552, 0.449175 )
 
 [node name="Beacon" parent="." index="5" groups=[
 "beacon",
-] instance=ExtResource( 3 )]
+] instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97557, 0.529552, -1.98419 )
 visible = false
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="Beacon" index="2"]
 wait_time = 5.0
