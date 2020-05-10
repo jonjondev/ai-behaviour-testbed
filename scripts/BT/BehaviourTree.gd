@@ -7,10 +7,13 @@ func _init(o):
 	owner = o
 	root = \
 	Selector.new([
-		Sequence.new([
-			BeaconVisibleCondition.new(owner),
-			AttackBeaconAction.new(owner),
-		]),
+		#Sequence.new([
+			#BeaconVisibleCondition.new(owner),
+			#AttackBeaconAction.new(owner),
+		#]),
+		BeaconVisiblePrecondition.new(owner, 
+			AttackBeaconAction.new(owner)
+		),
 		Sequence.new([
 			PatrolSafeAction.new(owner),
 			PatrolDoorAction.new(owner),
