@@ -1,6 +1,8 @@
 class_name Action
 extends Primitive
 
+var current_status
+
 func _init(o).(o):
 	pass
 
@@ -11,4 +13,4 @@ func update() -> int:
 	return Status.FAILURE
 
 func on_terminate(status) -> void:
-	pass
+	current_status = status
