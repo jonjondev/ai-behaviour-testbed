@@ -1,5 +1,5 @@
 class_name BeaconVisiblePrecondition
-extends Precondition
+extends Decorator
 
 var beacon
 
@@ -13,7 +13,6 @@ func on_initialise() -> void:
 func update() -> int:
 	if beacon and beacon.visible:
 		return child.update()
-	return Status.FAILURE
-
-func on_terminate(status) -> void:
-	pass
+	else:
+		on_terminate(Status.FAILURE)
+		return Status.FAILURE

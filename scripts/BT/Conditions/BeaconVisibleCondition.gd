@@ -14,6 +14,3 @@ func update() -> int:
 	if beacon and beacon.visible:
 		return Status.SUCCESS
 	return Status.FAILURE
-
-func on_terminate(status) -> void:
-	pass
