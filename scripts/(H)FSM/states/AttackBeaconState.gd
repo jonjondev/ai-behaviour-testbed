@@ -11,6 +11,8 @@ func on_enter():
 
 func on_update(delta):
 	owner.move_towards(target, delta)
+	if owner.is_near(target):
+		target.attack()
 
 func on_exit():
 	pass
