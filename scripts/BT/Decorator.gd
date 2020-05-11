@@ -15,4 +15,4 @@ func update() -> int:
 	return Status.FAILURE
 
 func on_terminate(status) -> void:
-	pass
+	child.on_terminate(status)
