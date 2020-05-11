@@ -89,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/(H)FSM/transitions/NavigatedToSafeTransition.gd"
 }, {
+"base": "Composite",
+"class": "Parallel",
+"language": "GDScript",
+"path": "res://scripts/BT/Parallel.gd"
+}, {
 "base": "Action",
 "class": "PatrolDoorAction",
 "language": "GDScript",
@@ -134,6 +139,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/BT/Sequence.gd"
 }, {
+"base": "Action",
+"class": "ShowAlertedAction",
+"language": "GDScript",
+"path": "res://scripts/BT/Actions/ShowAlertedAction.gd"
+}, {
 "base": "Reference",
 "class": "State",
 "language": "GDScript",
@@ -166,6 +176,7 @@ _global_script_class_icons={
 "HierarchicalStateMachine": "",
 "NavigatedToDoorTransition": "",
 "NavigatedToSafeTransition": "",
+"Parallel": "",
 "PatrolDoorAction": "",
 "PatrolDoorState": "",
 "PatrolMetaState": "",
@@ -175,6 +186,7 @@ _global_script_class_icons={
 "Primitive": "",
 "Selector": "",
 "Sequence": "",
+"ShowAlertedAction": "",
 "State": "",
 "StateMachine": "",
 "Transition": ""
