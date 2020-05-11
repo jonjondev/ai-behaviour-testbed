@@ -11,7 +11,10 @@ func on_initialise() -> void:
 
 func update() -> int:
 	owner.move_towards(beacon, owner.get_delta())
-	return Status.SUCCESS if owner.is_near(beacon) else Status.RUNNING
+	if owner.is_near(beacon):
+		beacon.attack()
+		return Status.SUCCESS
+	return Status.RUNNING
 
 func on_terminate(status) -> void:
 	pass
