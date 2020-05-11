@@ -6,8 +6,6 @@ var move_speed: float = 2
 var gravity: Vector3 = Vector3(0, -10, 0)
 var velocity: Vector3 = Vector3.ZERO
 
-var blackboard = {}
-
 func _ready():
 	behaviour_algorithm = behaviour_algorithm.new(self)
 	if behaviour_algorithm.has_method("on_enter"):
