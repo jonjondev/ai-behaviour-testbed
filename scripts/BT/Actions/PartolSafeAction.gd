@@ -10,14 +10,11 @@ func on_initialise() -> void:
 	safe = owner.get_tree().get_nodes_in_group("safe")[0]
 
 func update() -> int:
-	if owner.blackboard.get("last_patrolled") == "safe":
+	if current_status == Status.SUCCESS:
 		return Status.SUCCESS
 	owner.move_towards(safe, owner.get_delta())
 	if owner.is_near(safe):
-		owner.blackboard["last_patrolled"] = "safe"
+		current_status = Status.SUCCESS
 		return Status.SUCCESS
 	else:
 		return Status.RUNNING
-
-func on_terminate(status) -> void:
-	pass

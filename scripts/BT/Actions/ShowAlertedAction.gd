@@ -10,7 +10,7 @@ func on_initialise() -> void:
 	pass
 
 func update() -> int:
-	if owner.blackboard.get("is_alert"):
+	if current_status == Status.SUCCESS:
 		return Status.SUCCESS
 	elif not start_time:
 		start_time = OS.get_ticks_msec()
@@ -19,10 +19,7 @@ func update() -> int:
 	if (OS.get_ticks_msec() - start_time) < 250:
 		return Status.RUNNING
 	else:
+		current_status = Status.SUCCESS
 		owner.show_alerted(false)
-		owner.blackboard["is_alert"] = true
 		start_time = null
 		return Status.SUCCESS
-
-func on_terminate(status) -> void:
-	pass
