@@ -9,7 +9,5 @@ func update() -> int:
 		var status = child.update()
 		if status == Status.SUCCESS or status == Status.RUNNING:
 			return status
+	on_terminate(Status.FAILURE)
 	return Status.FAILURE
-
-func on_terminate(status) -> void:
-	pass

@@ -17,10 +17,9 @@ func update() -> int:
 				failure_count += 1
 		
 		if success_count >= children.size():
+			on_terminate(Status.COMPLETED)
 			return Status.SUCCESS
 		elif failure_count > 0:
+			on_terminate(Status.FAILURE)
 			return Status.FAILURE
 	return Status.RUNNING
-
-func on_terminate(status) -> void:
-	pass
