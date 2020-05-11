@@ -1,6 +1,6 @@
 class_name Behaviour
 
-enum Status {SUCCESS, FAILURE, RUNNING, SUSPENDED}
+enum Status {SUCCESS, RUNNING, FAILURE, COMPLETED, SUSPENDED}
 
 func on_initialise() -> void:
 	pass
