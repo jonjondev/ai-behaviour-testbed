@@ -12,7 +12,11 @@ func _init(o):
 			#AttackBeaconAction.new(owner),
 		#]),
 		BeaconVisiblePrecondition.new(owner, 
-			Sequence.new([
+			#Sequence.new([
+				#ShowAlertedAction.new(owner),
+				#AttackBeaconAction.new(owner),
+			#])
+			Parallel.new([
 				ShowAlertedAction.new(owner),
 				AttackBeaconAction.new(owner),
 			])
