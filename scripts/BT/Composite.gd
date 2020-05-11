@@ -14,4 +14,5 @@ func update() -> int:
 	return Status.FAILURE
 
 func on_terminate(status) -> void:
-	pass
+	for child in children:
+		child.on_terminate(status)
