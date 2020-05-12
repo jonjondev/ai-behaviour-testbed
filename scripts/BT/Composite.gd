@@ -6,13 +6,7 @@ var children: Array
 func _init(behaviours: Array):
 	children = behaviours
 
-func on_initialise() -> void:
+func default():
 	for child in children:
-		child.on_initialise()
-
-func update() -> int:
-	return Status.FAILURE
-
-func on_terminate(status) -> void:
-	for child in children:
-		child.on_terminate(status)
+		child.default()
+	.default()
