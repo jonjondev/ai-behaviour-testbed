@@ -9,6 +9,7 @@ func _init(o):
 	Selector.new([
 		#Sequence.new([
 			#BeaconVisibleCondition.new(owner),
+			#ShowAlertedAction.new(owner),
 			#AttackBeaconAction.new(owner),
 		#]),
 		BeaconVisiblePrecondition.new(owner, 
@@ -32,7 +33,6 @@ func _init(o):
 			PatrolDoorAction.new(owner),
 		]),
 	])
-	root.on_initialise()
 
 func tick() -> void:
-	var _status = root.update()
+	var _status = root.tick()
