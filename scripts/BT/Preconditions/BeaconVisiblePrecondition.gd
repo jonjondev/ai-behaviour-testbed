@@ -1,5 +1,5 @@
 class_name BeaconVisiblePrecondition
-extends Decorator
+extends Precondition
 
 var beacon
 

@@ -1,11 +1,9 @@
 class_name Decorator
 extends Behaviour
 
-var owner
 var child: Behaviour
 
-func _init(o, behaviour: Behaviour):
-	owner = o
+func _init(behaviour: Behaviour):
 	child = behaviour
 
 func on_initialise() -> void:
