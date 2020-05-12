@@ -49,10 +49,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/BT/Behaviour.gd"
 }, {
-"base": "Reference",
+"base": "Primitive",
 "class": "BehaviourTree",
 "language": "GDScript",
 "path": "res://scripts/BT/BehaviourTree.gd"
+}, {
+"base": "BehaviourTree",
+"class": "ComplexBehaviourTree",
+"language": "GDScript",
+"path": "res://scripts/BT/BehaviourTrees/ComplexBehaviourTree.gd"
 }, {
 "base": "Behaviour",
 "class": "Composite",
@@ -97,7 +102,7 @@ _global_script_classes=[ {
 "base": "Action",
 "class": "PatrolDoorAction",
 "language": "GDScript",
-"path": "res://scripts/BT/Actions/PartolDoorAction.gd"
+"path": "res://scripts/BT/Actions/PatrolDoorAction.gd"
 }, {
 "base": "State",
 "class": "PatrolDoorState",
@@ -109,10 +114,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/(H)FSM/state_machines/PatrolMetaState.gd"
 }, {
-"base": "Action",
+"base": "Reference",
 "class": "PatrolSafeAction",
 "language": "GDScript",
-"path": "res://scripts/BT/Actions/PartolSafeAction.gd"
+"path": "res://scripts/BT/Actions/PatrolSafeAction.gd"
 }, {
 "base": "State",
 "class": "PatrolSafeState",
@@ -149,6 +154,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/BT/Actions/ShowAlertedAction.gd"
 }, {
+"base": "BehaviourTree",
+"class": "SimpleBehaviourTree",
+"language": "GDScript",
+"path": "res://scripts/BT/BehaviourTrees/SimpleBehaviourTree.gd"
+}, {
 "base": "Reference",
 "class": "State",
 "language": "GDScript",
@@ -174,6 +184,7 @@ _global_script_class_icons={
 "BeaconVisiblePrecondition": "",
 "Behaviour": "",
 "BehaviourTree": "",
+"ComplexBehaviourTree": "",
 "Composite": "",
 "Condition": "",
 "Decorator": "",
@@ -193,6 +204,7 @@ _global_script_class_icons={
 "Selector": "",
 "Sequence": "",
 "ShowAlertedAction": "",
+"SimpleBehaviourTree": "",
 "State": "",
 "StateMachine": "",
 "Transition": ""
