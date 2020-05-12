@@ -9,7 +9,7 @@ func update() -> int:
 	var failure_count = 0
 	
 	for child in children:
-		var state = child.update()
+		var state = child.tick()
 		match(state):
 			Status.SUCCESS:
 				success_count += 1
@@ -17,9 +17,8 @@ func update() -> int:
 				failure_count += 1
 		
 		if success_count >= children.size():
-			on_terminate(Status.COMPLETED)
+			default()
 			return Status.SUCCESS
 		elif failure_count > 0:
-			on_terminate(Status.FAILURE)
 			return Status.FAILURE
 	return Status.RUNNING

@@ -5,12 +5,11 @@ func _init(behaviours: Array).(behaviours):
 	pass
 
 func update() -> int:
+	if current_status == Status.SUCCESS:
+		return Status.SUCCESS
 	for child in children:
-		var state = child.update()
-		if not state == Status.SUCCESS:
-			if state == Status.FAILURE:
-				on_terminate(state)
-				break
+		var state = child.tick()
+		if state != Status.SUCCESS:
 			return state
-	on_terminate(Status.COMPLETED)
+	default()
 	return Status.SUCCESS

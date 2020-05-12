@@ -6,8 +6,9 @@ func _init(behaviours: Array).(behaviours):
 
 func update() -> int:
 	for child in children:
-		var status = child.update()
-		if status == Status.SUCCESS or status == Status.RUNNING:
+		var status = child.tick()
+		if status != Status.FAILURE:
+			if status == Status.SUCCESS:
+				default()
 			return status
-	on_terminate(Status.FAILURE)
 	return Status.FAILURE
