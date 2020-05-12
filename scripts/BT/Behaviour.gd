@@ -1,6 +1,8 @@
 class_name Behaviour
 
-enum Status {SUCCESS, RUNNING, FAILURE, COMPLETED, SUSPENDED}
+enum Status {DEFAULT, RUNNING, SUCCESS, FAILURE}
+
+var current_status = Status.DEFAULT
 
 func on_initialise() -> void:
 	pass
