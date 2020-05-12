@@ -21,3 +21,5 @@ func tick() -> int:
 		on_terminate(current_status)
 	return current_status
 
+func default():
+	current_status = Status.DEFAULT
