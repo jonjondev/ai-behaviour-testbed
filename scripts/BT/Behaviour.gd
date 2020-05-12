@@ -12,3 +12,12 @@ func update() -> int:
 
 func on_terminate(status) -> void:
 	pass
+
+func tick() -> int:
+	if current_status != Status.RUNNING:
+		on_initialise()
+	current_status = update()
+	if current_status != Status.RUNNING:
+		on_terminate(current_status)
+	return current_status
+
