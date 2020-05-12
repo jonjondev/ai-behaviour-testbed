@@ -10,7 +10,7 @@ func on_initialise() -> void:
 func update() -> int:
 	return Status.FAILURE
 
-func on_terminate(status) -> void:
+func on_terminate(_status) -> void:
 	pass
 
 func tick() -> int:

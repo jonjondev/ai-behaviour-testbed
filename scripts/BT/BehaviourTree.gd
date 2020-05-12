@@ -1,38 +1,10 @@
 class_name BehaviourTree
+extends Primitive
 
-var owner
-var root: Behaviour
+var root
 
-func _init(o):
-	owner = o
-	root = \
-	Selector.new([
-		#Sequence.new([
-			#BeaconVisibleCondition.new(owner),
-			#ShowAlertedAction.new(owner),
-			#AttackBeaconAction.new(owner),
-		#]),
-		BeaconVisiblePrecondition.new(owner, 
-			Sequence.new([
-				ShowAlertedAction.new(owner),
-				RepeatFilter.new(2,
-					Sequence.new([
-						PatrolSafeAction.new(owner),
-						PatrolDoorAction.new(owner),
-					])
-				),
-				AttackBeaconAction.new(owner),
-			])
-			#Parallel.new([
-				#ShowAlertedAction.new(owner),
-				#AttackBeaconAction.new(owner),
-			#])
-		),
-		Sequence.new([
-			PatrolSafeAction.new(owner),
-			PatrolDoorAction.new(owner),
-		]),
-	])
+func _init(o).(o):
+	pass
 
-func tick() -> void:
-	var _status = root.tick()
+func update() -> int:
+	return root.tick()
