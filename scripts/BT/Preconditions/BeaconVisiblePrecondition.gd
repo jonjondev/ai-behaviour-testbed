@@ -12,7 +12,6 @@ func on_initialise() -> void:
 
 func update() -> int:
 	if beacon and beacon.visible:
-		return child.update()
+		return child.tick()
 	else:
-		on_terminate(Status.FAILURE)
 		return Status.FAILURE
