@@ -9,8 +9,8 @@ func _init(o).(o):
 				ShowAlertedAction.new(owner),
 				RepeatFilter.new(2,
 					Sequence.new([
-						PatrolSafeAction.new(owner),
-						PatrolDoorAction.new(owner),
+						NavigateAction.new(owner, "safe"),
+						NavigateAction.new(owner, "door"),
 					])
 				),
 				Parallel.new([
@@ -26,7 +26,7 @@ func _init(o).(o):
 			])
 		),
 		Sequence.new([
-			PatrolSafeAction.new(owner),
-			PatrolDoorAction.new(owner),
+			NavigateAction.new(owner, "safe"),
+			NavigateAction.new(owner, "door"),
 		]),
 	])
