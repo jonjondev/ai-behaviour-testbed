@@ -1,10 +1,11 @@
-class_name ShowAlertedAction
+class_name AnimateAction
 extends Action
 
+var animation_name
 var start_time
 
-func _init(o).(o):
-	pass
+func _init(o, animation).(o):
+	animation_name = animation
 
 func update() -> int:
 	if current_status == Status.SUCCESS:
@@ -12,10 +13,10 @@ func update() -> int:
 	
 	if not start_time:
 		start_time = OS.get_ticks_msec()
-		owner.show_alerted(true)
+		owner.start_anim(animation_name)
 	
 	if (OS.get_ticks_msec() - start_time) >= 250:
-		owner.show_alerted(false)
+		owner.stop_anim(animation_name)
 		start_time = null
 		return Status.SUCCESS
 	return Status.RUNNING

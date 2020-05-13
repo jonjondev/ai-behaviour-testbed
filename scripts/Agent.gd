@@ -31,5 +31,13 @@ func is_near(target):
 func get_delta() -> float:
 	return get_physics_process_delta_time()
 
-func show_alerted(visibility):
-	$AlertedIndicator.visible = visibility
+func start_anim(anim_name):
+	match(anim_name):
+		"alerted":
+			$AlertedIndicator.visible = true
+
+func stop_anim(anim_name):
+	match(anim_name):
+		"alerted":
+			$AlertedIndicator.visible = false
+
