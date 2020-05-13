@@ -15,7 +15,13 @@ func _init(o).(o):
 				),
 				Parallel.new([
 					ShowAlertedAction.new(owner),
-					AttackBeaconAction.new(owner),
+					Selector.new([
+						Sequence.new([
+							NearBeaconCondition.new(owner),
+							AttackBeaconAction.new(owner),
+						]),
+						NavigateToBeaconAction.new(owner),
+					])
 				]),
 			])
 		),

@@ -6,7 +6,14 @@ func _init(o).(o):
 	Selector.new([
 		Sequence.new([
 			BeaconVisibleCondition.new(owner),
-			AttackBeaconAction.new(owner),
+			ShowAlertedAction.new(owner),
+			Selector.new([
+				Sequence.new([
+					NearBeaconCondition.new(owner),
+					AttackBeaconAction.new(owner),
+				]),
+				NavigateToBeaconAction.new(owner),
+			])
 		]),
 		Sequence.new([
 			PatrolSafeAction.new(owner),

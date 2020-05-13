@@ -1,4 +1,4 @@
-class_name AttackBeaconAction
+class_name NavigateToBeaconAction
 extends Action
 
 var beacon
@@ -11,5 +11,5 @@ func on_initialise() -> void:
 	.on_initialise()
 
 func update() -> int:
-	beacon.attack()
-	return Status.SUCCESS
+	owner.move_towards(beacon, owner.get_delta())
+	return Status.RUNNING

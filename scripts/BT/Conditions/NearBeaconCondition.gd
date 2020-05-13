@@ -1,5 +1,5 @@
-class_name AttackBeaconAction
-extends Action
+class_name NearBeaconCondition
+extends Condition
 
 var beacon
 
@@ -11,5 +11,6 @@ func on_initialise() -> void:
 	.on_initialise()
 
 func update() -> int:
-	beacon.attack()
-	return Status.SUCCESS
+	if owner.is_near(beacon):
+		return Status.SUCCESS
+	return Status.FAILURE
