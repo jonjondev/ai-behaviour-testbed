@@ -1,5 +1,5 @@
-class_name NavigateAction
-extends Action
+class_name NearCondition
+extends Condition
 
 var target_id
 var target
@@ -12,5 +12,6 @@ func on_initialise() -> void:
 	.on_initialise()
 
 func update() -> int:
-	owner.move_towards(target, owner.get_delta())
-	return Status.RUNNING
+	if owner.is_near(target):
+		return Status.SUCCESS
+	return Status.FAILURE

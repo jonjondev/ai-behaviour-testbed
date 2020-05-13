@@ -1,10 +1,10 @@
-class_name NavigateAction
-extends Action
+class_name NearPrecondition
+extends Precondition
 
 var target_id
 var target
 
-func _init(o, target).(o):
+func _init(o, target, child).(o, child):
 	target_id = target
 
 func on_initialise() -> void:
@@ -12,5 +12,6 @@ func on_initialise() -> void:
 	.on_initialise()
 
 func update() -> int:
-	owner.move_towards(target, owner.get_delta())
-	return Status.RUNNING
+	if owner.is_near(target):
+		return child.tick()
+	return Status.FAILURE
