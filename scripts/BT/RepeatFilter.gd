@@ -9,19 +9,19 @@ func _init(value: int, behaviour: Behaviour).(behaviour):
 	.on_initialise()
 
 func update() -> int:
-	if current_status == Status.SUCCESS:
+	if repeated >= repeat_value:
 		return Status.SUCCESS
-	while true:
-		var status = child.tick()
-		match(status):
-			Status.RUNNING:
-				break
-			Status.FAILURE:
-				return Status.FAILURE
-			Status.SUCCESS:
-				repeated += 1
-				default()
-		if repeated >= repeat_value:
-			repeated = 0
-			return Status.SUCCESS
+	var status = child.tick()
+	match(status):
+		Status.RUNNING:
+			pass
+		Status.FAILURE:
+			return Status.FAILURE
+		Status.SUCCESS:
+			repeated += 1
 	return Status.RUNNING
+
+func on_terminate(status) -> void:
+	if status == Status.FAILURE:
+		repeated = 0
+	.on_terminate(status)

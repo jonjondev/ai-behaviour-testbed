@@ -6,7 +6,7 @@ var children: Array
 func _init(behaviours: Array):
 	children = behaviours
 
-func default():
+func on_terminate(status):
 	for child in children:
-		child.default()
-	.default()
+		child.on_terminate(status)
+	.on_terminate(status)

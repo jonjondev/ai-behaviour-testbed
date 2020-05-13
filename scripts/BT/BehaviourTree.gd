@@ -7,11 +7,8 @@ func _init(o).(o):
 	pass
 
 func update() -> int:
-	var status = root.tick()
-	if status == Status.SUCCESS:
-		default()
-	return status
+	return root.tick()
 
-func default():
-	root.default()
-	.default()
+func on_terminate(status) -> void:
+	root.on_terminate(status)
+	.on_terminate(status)
