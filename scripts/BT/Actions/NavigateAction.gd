@@ -12,5 +12,9 @@ func on_initialise() -> void:
 	.on_initialise()
 
 func update() -> int:
-	owner.move_towards(target, owner.get_delta())
+	owner.navigation.set_target(self, target)
 	return Status.RUNNING
+
+func on_terminate(status) -> void:
+	owner.navigation.unset_target(self)
+	.on_terminate(status)

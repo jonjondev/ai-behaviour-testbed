@@ -6,7 +6,13 @@ func _init(o).(o):
 	Selector.new([
 		VisiblePrecondition.new(owner, "beacon", 
 			Sequence.new([
-				AnimateAction.new(owner, "alerted"),
+				Selector.new([
+					GetVarAction.new(owner, "alerted1", true),
+					Sequence.new([
+						AnimateAction.new(owner, "alerted"),
+						SetVarAction.new(owner, "alerted1", true),
+					]),
+				]),
 				Selector.new([
 					GetVarAction.new(owner, "attacking", true),
 					Sequence.new([
@@ -18,10 +24,18 @@ func _init(o).(o):
 					PatrolBehaviourTree.new(owner)
 				),
 				Parallel.new([
-					AnimateAction.new(owner, "alerted"),
+					Selector.new([
+						GetVarAction.new(owner, "alerted2", true),
+						Sequence.new([
+							AnimateAction.new(owner, "alerted"),
+							SetVarAction.new(owner, "alerted2", true),
+						]),
+					]),
 					CombatBehaviourTree.new(owner),
 				]),
 				SetVarAction.new(owner, "attacking", false),
+				SetVarAction.new(owner, "alerted1", false),
+				SetVarAction.new(owner, "alerted2", false),
 			])
 		),
 		PatrolBehaviourTree.new(owner),
