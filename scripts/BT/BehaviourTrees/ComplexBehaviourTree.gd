@@ -4,29 +4,25 @@ extends BehaviourTree
 func _init(o).(o):
 	root = \
 	Selector.new([
-		BeaconVisiblePrecondition.new(owner, 
+		VisiblePrecondition.new(owner, "beacon", 
 			Sequence.new([
-				ShowAlertedAction.new(owner),
-				RepeatFilter.new(2,
+				AnimateAction.new(owner, "alerted"),
+				Selector.new([
+					GetVarAction.new(owner, "attacking", true),
 					Sequence.new([
-						NavigateAction.new(owner, "safe"),
-						NavigateAction.new(owner, "door"),
-					])
+						SetVarAction.new(owner, "last_patrolled", "door"),
+						SetVarAction.new(owner, "attacking", true),
+					]),
+				]),
+				RepeatFilter.new(2,
+					PatrolBehaviourTree.new(owner)
 				),
 				Parallel.new([
-					ShowAlertedAction.new(owner),
-					Selector.new([
-						Sequence.new([
-							NearBeaconCondition.new(owner),
-							AttackBeaconAction.new(owner),
-						]),
-						NavigateToBeaconAction.new(owner),
-					])
+					AnimateAction.new(owner, "alerted"),
+					CombatBehaviourTree.new(owner),
 				]),
+				SetVarAction.new(owner, "attacking", false),
 			])
 		),
-		Sequence.new([
-			NavigateAction.new(owner, "safe"),
-			NavigateAction.new(owner, "door"),
-		]),
+		PatrolBehaviourTree.new(owner),
 	])
