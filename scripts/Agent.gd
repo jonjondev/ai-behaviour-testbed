@@ -2,10 +2,8 @@ extends KinematicBody
 
 export (GDScript) var behaviour_algorithm
 
-var move_speed: float = 2
-var gravity: Vector3 = Vector3(0, -10, 0)
-var velocity: Vector3 = Vector3.ZERO
-
+var navigation = NavigationManager.new(self)
+var animation = AnimationManager.new(self)
 var blackboard = {}
 
 func _ready():
@@ -18,28 +16,8 @@ func _physics_process(delta):
 		behaviour_algorithm.on_update(delta)
 	elif behaviour_algorithm.has_method("tick"):
 		behaviour_algorithm.tick()
+	navigation.process()
 
-func move_towards(target, delta):
-	var move = Vector3.ZERO
-	if target and translation.distance_to(target.translation) > 0.1:
-		move = (target.translation - translation).normalized() * move_speed
-		move.y = 0
-	velocity = move_and_slide(move + (velocity + gravity * delta))
-	velocity = Vector3(0, velocity.y, 0)
 
 func is_near(target):
 	return target and translation.distance_to(target.translation) < 0.2
-
-func get_delta() -> float:
-	return get_physics_process_delta_time()
-
-func start_anim(anim_name):
-	match(anim_name):
-		"alerted":
-			$AlertedIndicator.visible = true
-
-func stop_anim(anim_name):
-	match(anim_name):
-		"alerted":
-			$AlertedIndicator.visible = false
-
