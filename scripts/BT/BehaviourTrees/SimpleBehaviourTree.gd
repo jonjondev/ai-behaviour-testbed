@@ -6,15 +6,8 @@ func _init(o).(o):
 	Selector.new([
 		Sequence.new([
 			VisibleCondition.new(owner, "beacon"),
-			Selector.new([
-				GetVarAction.new(owner, "alerted", true),
-				Sequence.new([
-					AnimateAction.new(owner, "alerted"),
-					SetVarAction.new(owner, "alerted", true),
-				]),
-			]),
+			AnimateAction.new(owner, "alerted"),
 			CombatBehaviourTree.new(owner),
-			SetVarAction.new(owner, "alerted", false),
 		]),
 		PatrolBehaviourTree.new(owner),
 	])
