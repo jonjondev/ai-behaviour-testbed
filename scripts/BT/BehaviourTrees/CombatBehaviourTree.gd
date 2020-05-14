@@ -3,9 +3,7 @@ extends BehaviourTree
 
 func _init(o).(o):
 	root = \
-	Selector.new([
-		Sequence.new([
-			NavigateToBehaviourTree.new(owner, "beacon"),
-			AttackAction.new(owner, "beacon"),
-		]),
+	Sequence.new([
+		NavigateToBehaviourTree.new(owner, "beacon"),
+		AttackAction.new(owner, "beacon"),
 	])
