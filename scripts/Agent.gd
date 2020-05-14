@@ -13,12 +13,12 @@ func _ready():
 		behaviour_algorithm.on_enter()
 
 func _physics_process(delta):
-	if behaviour_algorithm.has_method("on_update"):
-		behaviour_algorithm.on_update(delta)
 	navigation.process()
 
 func ai_process():
-	if behaviour_algorithm.has_method("tick"):
+	if behaviour_algorithm.has_method("on_update"):
+		behaviour_algorithm.on_update()
+	elif behaviour_algorithm.has_method("tick"):
 		behaviour_algorithm.tick()
 
 func is_near(target):
