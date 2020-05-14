@@ -1,16 +1,21 @@
 class_name Selector
 extends Composite
 
+var current_child_idx
+
 func _init(behaviours: Array).(behaviours):
 	pass
 
+func on_initialise() -> void:
+	current_child_idx = 0
+	.on_initialise()
+
 func update() -> int:
-	var return_status = Status.FAILURE
-	for child in children:
-		if return_status != Status.FAILURE:
-			child.on_terminate(Status.FAILURE)
-		else:
-			var status = child.tick()
-			if status != Status.FAILURE:
-				return_status = status
-	return return_status
+	while true:
+		var status = children[current_child_idx].tick()
+		if status != Status.FAILURE:
+			return status
+		current_child_idx += 1
+		if current_child_idx >= children.size():
+			return Status.FAILURE
+	return Status.DEFAULT

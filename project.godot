@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/BT/Action.gd"
 }, {
+"base": "Selector",
+"class": "ActiveSelector",
+"language": "GDScript",
+"path": "res://scripts/BT/ActiveSelector.gd"
+}, {
 "base": "Action",
 "class": "AnimateAction",
 "language": "GDScript",
@@ -98,6 +103,11 @@ _global_script_classes=[ {
 "class": "NavigateAction",
 "language": "GDScript",
 "path": "res://scripts/BT/Actions/NavigateAction.gd"
+}, {
+"base": "BehaviourTree",
+"class": "NavigateToBehaviourTree",
+"language": "GDScript",
+"path": "res://scripts/BT/BehaviourTrees/NavigateToBehaviourTree.gd"
 }, {
 "base": "Transition",
 "class": "NavigatedToDoorTransition",
@@ -211,6 +221,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Action": "",
+"ActiveSelector": "",
 "AnimateAction": "",
 "AnimationManager": "",
 "AttackAction": "",
@@ -228,6 +239,7 @@ _global_script_class_icons={
 "GetVarAction": "",
 "HierarchicalStateMachine": "",
 "NavigateAction": "",
+"NavigateToBehaviourTree": "",
 "NavigatedToDoorTransition": "",
 "NavigatedToSafeTransition": "",
 "NavigationManager": "",
