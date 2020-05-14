@@ -8,7 +8,7 @@ func _init(o):
 func on_enter():
 	pass
 
-func on_update(_delta):
+func on_update():
 	pass
 
 func on_exit():

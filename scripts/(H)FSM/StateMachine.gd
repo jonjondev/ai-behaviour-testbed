@@ -18,7 +18,7 @@ func on_enter():
 	instanced_states.append(current_state)
 	current_state.on_enter()
 
-func on_update(delta):
+func on_update():
 	var transition_states = transition_state_map[current_state.get_script()]
 	for transition_state in transition_states:
 		if transition_state[0].is_valid():
@@ -27,7 +27,7 @@ func on_update(delta):
 			current_state = get_state(transition_state[1])
 			current_state.on_enter()
 			break
-	current_state.on_update(delta)
+	current_state.on_update()
 
 func on_exit():
 	pass
