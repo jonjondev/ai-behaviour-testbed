@@ -9,10 +9,10 @@ func _init(o, id).(o):
 
 func on_initialise() -> void:
 	target = owner.get_tree().get_nodes_in_group(target_id)[0]
+	owner.navigation.set_target(self, target)
 	.on_initialise()
 
 func update() -> int:
-	owner.navigation.set_target(self, target)
 	return Status.RUNNING
 
 func on_terminate(status) -> void:
