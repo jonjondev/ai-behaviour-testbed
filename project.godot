@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/BT/Action.gd"
 }, {
+"base": "State",
+"class": "ActionState",
+"language": "GDScript",
+"path": "res://scripts/GOAP/states/ActionState.gd"
+}, {
 "base": "Selector",
 "class": "ActiveSelector",
 "language": "GDScript",
@@ -33,6 +38,11 @@ _global_script_classes=[ {
 "class": "AttackAction",
 "language": "GDScript",
 "path": "res://scripts/BT/Actions/AttackAction.gd"
+}, {
+"base": "GoapAction",
+"class": "AttackBeaconGoapAction",
+"language": "GDScript",
+"path": "res://scripts/GOAP/actions/AttackBeaconGoapAction.gd"
 }, {
 "base": "State",
 "class": "AttackBeaconState",
@@ -64,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/BT/BehaviourTrees/CombatBehaviourTree.gd"
 }, {
+"base": "Transition",
+"class": "CompletedActionsTransition",
+"language": "GDScript",
+"path": "res://scripts/GOAP/transitions/CompletedActionsTransition.gd"
+}, {
 "base": "BehaviourTree",
 "class": "ComplexBehaviourTree",
 "language": "GDScript",
@@ -89,10 +104,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/(H)FSM/state_machines/FiniteStateMachine.gd"
 }, {
+"base": "Transition",
+"class": "GeneratedPlanTransition",
+"language": "GDScript",
+"path": "res://scripts/GOAP/transitions/GeneratedPlanTransition.gd"
+}, {
 "base": "Action",
 "class": "GetVarAction",
 "language": "GDScript",
 "path": "res://scripts/BT/Actions/GetVarAction.gd"
+}, {
+"base": "Reference",
+"class": "GoapAction",
+"language": "GDScript",
+"path": "res://scripts/GOAP/GoapAction.gd"
+}, {
+"base": "StateMachine",
+"class": "GoapStateMachine",
+"language": "GDScript",
+"path": "res://scripts/GOAP/GoapStateMachine.gd"
 }, {
 "base": "StateMachine",
 "class": "HierarchicalStateMachine",
@@ -119,10 +149,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/(H)FSM/transitions/NavigatedToSafeTransition.gd"
 }, {
+"base": "Transition",
+"class": "NavigationCompletedTransition",
+"language": "GDScript",
+"path": "res://scripts/GOAP/transitions/NavigationCompletedTransition.gd"
+}, {
 "base": "Reference",
 "class": "NavigationManager",
 "language": "GDScript",
 "path": "res://scripts/NavigationManager.gd"
+}, {
+"base": "Transition",
+"class": "NavigationRequiredTransition",
+"language": "GDScript",
+"path": "res://scripts/GOAP/transitions/NavigationRequiredTransition.gd"
+}, {
+"base": "State",
+"class": "NavigationState",
+"language": "GDScript",
+"path": "res://scripts/GOAP/states/NavigationState.gd"
 }, {
 "base": "Condition",
 "class": "NearCondition",
@@ -158,6 +203,11 @@ _global_script_classes=[ {
 "class": "PatrolSafeState",
 "language": "GDScript",
 "path": "res://scripts/(H)FSM/states/PatrolSafeState.gd"
+}, {
+"base": "State",
+"class": "PlanningState",
+"language": "GDScript",
+"path": "res://scripts/GOAP/states/PlanningState.gd"
 }, {
 "base": "Decorator",
 "class": "Precondition",
@@ -221,28 +271,37 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Action": "",
+"ActionState": "",
 "ActiveSelector": "",
 "AnimateAction": "",
 "AnimationManager": "",
 "AttackAction": "",
+"AttackBeaconGoapAction": "",
 "AttackBeaconState": "",
 "BeaconAppearedTransition": "",
 "BeaconDisappearedTransition": "",
 "Behaviour": "",
 "BehaviourTree": "",
 "CombatBehaviourTree": "",
+"CompletedActionsTransition": "",
 "ComplexBehaviourTree": "",
 "Composite": "",
 "Condition": "",
 "Decorator": "",
 "FullStateMachine": "",
+"GeneratedPlanTransition": "",
 "GetVarAction": "",
+"GoapAction": "",
+"GoapStateMachine": "",
 "HierarchicalStateMachine": "",
 "NavigateAction": "",
 "NavigateToBehaviourTree": "",
 "NavigatedToDoorTransition": "",
 "NavigatedToSafeTransition": "",
+"NavigationCompletedTransition": "",
 "NavigationManager": "",
+"NavigationRequiredTransition": "",
+"NavigationState": "",
 "NearCondition": "",
 "NearPrecondition": "",
 "Parallel": "",
@@ -250,6 +309,7 @@ _global_script_class_icons={
 "PatrolDoorState": "",
 "PatrolMetaState": "",
 "PatrolSafeState": "",
+"PlanningState": "",
 "Precondition": "",
 "Primitive": "",
 "RepeatFilter": "",
@@ -267,7 +327,7 @@ _global_script_class_icons={
 [application]
 
 config/name="AI Behaviour Testbed"
-run/main_scene="res://scenes/BehaviourTests/BTV1Test.tscn"
+run/main_scene="res://scenes/BehaviourTests/GOAPTest.tscn"
 config/icon="res://icon.png"
 
 [rendering]

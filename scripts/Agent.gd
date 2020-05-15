@@ -7,12 +7,12 @@ var animation = AnimationManager.new(self)
 var blackboard = {}
 
 func _ready():
-	$AITime.connect("timeout", self , "ai_process")
+	var _err = $AITime.connect("timeout", self , "ai_process")
 	behaviour_algorithm = behaviour_algorithm.new(self)
 	if behaviour_algorithm.has_method("on_enter"):
 		behaviour_algorithm.on_enter()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	navigation.process()
 
 func ai_process():
