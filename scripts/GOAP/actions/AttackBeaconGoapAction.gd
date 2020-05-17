@@ -16,5 +16,6 @@ func perform():
 	if owner.is_near(target):
 		target.attack()
 		owner.blackboard.weapon = false
+		owner.animation.start_anim("unarmed")
 		return true
 	return false

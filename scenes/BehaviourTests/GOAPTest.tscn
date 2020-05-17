@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Beacon.gd" type="Script" id=1]
 [ext_resource path="res://scripts/GOAP/GoapStateMachine.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Components/BasicEnvironment.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Components/Target.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Components/Agent.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Components/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Components/Safe.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Components/Weapon.tscn" type="PackedScene" id=8]
 
 [node name="Spatial" instance=ExtResource( 3 )]
 
@@ -12,17 +15,10 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1191, 0 )
 behaviour_algorithm = ExtResource( 2 )
 
-[node name="Door" parent="." index="3" groups=[
-"door",
-] instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61371, 0.529552, 4.3099 )
+[node name="Safe" parent="." index="3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.704, 0.25, 0.449 )
 
-[node name="Safe" parent="." index="4" groups=[
-"safe",
-] instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70365, 0.529552, 0.449175 )
-
-[node name="Beacon" parent="." index="5" groups=[
+[node name="Beacon" parent="." index="4" groups=[
 "beacon",
 ] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97557, 0.529552, -1.98419 )
@@ -33,7 +29,8 @@ script = ExtResource( 1 )
 wait_time = 5.0
 autostart = true
 
-[node name="Weapon" parent="." index="6" groups=[
-"weapon",
-] instance=ExtResource( 4 )]
+[node name="Weapon" parent="." index="5" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86053, 0.529552, 3.65909 )
+
+[node name="Door" parent="." index="6" instance=ExtResource( 6 )]
+transform = Transform( 0.608346, 0, 0.793672, 0, 1, 0, -0.793672, 0, 0.608346, 3.53752, 0.5, 4.29001 )
