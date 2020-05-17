@@ -13,6 +13,10 @@ func start_anim(anim_name):
 			anim_running = true
 			agent.get_node("AlertedIndicator").visible = true
 			agent.get_tree().create_timer(1.0).connect("timeout", self, "stop_anim")
+		"armed":
+			agent.get_node("WeaponModel").visible = true
+		"unarmed":
+			agent.get_node("WeaponModel").visible = false
 
 func stop_anim():
 	agent.get_node("AlertedIndicator").visible = false

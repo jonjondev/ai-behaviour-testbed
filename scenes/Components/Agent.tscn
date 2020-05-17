@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Agent.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Components/WeaponModel.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.2
@@ -62,3 +63,7 @@ material/0 = null
 [node name="AITime" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="WeaponModel" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.733825, 0.679339, 0, -0.679339, 0.733825, 0, 0, 0, 1, 0.0962632, 0.206189, 0.194479 )
+visible = false
