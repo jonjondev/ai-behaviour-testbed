@@ -4,7 +4,7 @@ extends BehaviourTree
 func _init(o).(o):
 	root = \
 	ActiveSelector.new([
-		VisiblePrecondition.new(owner, "beacon", 
+		VisiblePrecondition.new(owner, "enemy", 
 			Sequence.new([
 				AnimateAction.new(owner, "alerted"),
 				SetVarAction.new(owner, "last_patrolled", "door"),

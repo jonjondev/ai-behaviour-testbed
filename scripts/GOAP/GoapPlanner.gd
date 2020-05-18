@@ -1,7 +1,7 @@
 class_name GoapPlanner
 
 enum StateConditions {
-	BEACON_ALIVE,
+	ENEMY_ALIVE,
 	WEAPON_AVAILABLE,
 	WEAPON_ACQUIRED,
 }

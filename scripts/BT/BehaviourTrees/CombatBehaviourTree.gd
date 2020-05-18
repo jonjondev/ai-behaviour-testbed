@@ -4,6 +4,6 @@ extends BehaviourTree
 func _init(o).(o):
 	root = \
 	Sequence.new([
-		NavigateToBehaviourTree.new(owner, "beacon"),
-		AttackAction.new(owner, "beacon"),
+		NavigateToBehaviourTree.new(owner, "enemy"),
+		AttackAction.new(owner, "enemy"),
 	])

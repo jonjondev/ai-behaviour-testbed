@@ -5,10 +5,10 @@ func _init(o).(o):
 	current_state = PatrolMetaState
 	transition_state_map = {
 		PatrolMetaState: [
-			[BeaconAppearedTransition, AttackBeaconState],
+			[EnemyAppearedTransition, AttackEnemyState],
 		],
-		AttackBeaconState: [
-			[BeaconDisappearedTransition, PatrolMetaState],
+		AttackEnemyState: [
+			[EnemyDisappearedTransition, PatrolMetaState],
 		],
 	}
 	.setup()

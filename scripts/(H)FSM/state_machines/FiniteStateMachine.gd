@@ -6,14 +6,14 @@ func _init(o).(o):
 	transition_state_map = {
 		PatrolDoorState: [
 			[NavigatedToDoorTransition, PatrolSafeState],
-			[BeaconAppearedTransition, AttackBeaconState],
+			[EnemyAppearedTransition, AttackEnemyState],
 		],
 		PatrolSafeState: [
 			[NavigatedToSafeTransition, PatrolDoorState],
-			[BeaconAppearedTransition, AttackBeaconState],
+			[EnemyAppearedTransition, AttackEnemyState],
 		],
-		AttackBeaconState: [
-			[BeaconDisappearedTransition, PatrolDoorState],
+		AttackEnemyState: [
+			[EnemyDisappearedTransition, PatrolDoorState],
 		],
 	}
 	.setup()

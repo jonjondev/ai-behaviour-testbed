@@ -1,11 +1,11 @@
 class_name GoapAgent
 
 var goal_state = {
-	GoapPlanner.StateConditions.BEACON_ALIVE: false,
+	GoapPlanner.StateConditions.ENEMY_ALIVE: false,
 }
 
 var actions = [
-	AttackBeaconGoapAction,
+	AttackEnemyGoapAction,
 	PickupWeaponGoapAction,
 ]
 
