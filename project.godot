@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/(H)FSM/states/AttackEnemyState.gd"
 }, {
+"base": "CompoundTask",
+"class": "BeGuardTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/tasks/BeGuardTask.gd"
+}, {
 "base": "Reference",
 "class": "Behaviour",
 "language": "GDScript",
@@ -78,6 +83,11 @@ _global_script_classes=[ {
 "class": "Composite",
 "language": "GDScript",
 "path": "res://scripts/BT/Composite.gd"
+}, {
+"base": "Reference",
+"class": "CompoundTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/CompoundTask.gd"
 }, {
 "base": "Primitive",
 "class": "Condition",
@@ -134,6 +144,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/GOAP/GoapStateMachine.gd"
 }, {
+"base": "Reference",
+"class": "HTNPlanner",
+"language": "GDScript",
+"path": "res://scripts/HTN/HTNPlanner.gd"
+}, {
+"base": "Reference",
+"class": "HTNRunnner",
+"language": "GDScript",
+"path": "res://scripts/HTN/HTNRunner.gd"
+}, {
+"base": "Reference",
+"class": "HTNSensor",
+"language": "GDScript",
+"path": "res://scripts/HTN/HTNSensor.gd"
+}, {
 "base": "StateMachine",
 "class": "HierarchicalStateMachine",
 "language": "GDScript",
@@ -148,6 +173,16 @@ _global_script_classes=[ {
 "class": "NavigateToBehaviourTree",
 "language": "GDScript",
 "path": "res://scripts/BT/BehaviourTrees/NavigateToBehaviourTree.gd"
+}, {
+"base": "PrimitiveTask",
+"class": "NavigateToEnemyTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/tasks/NavigateToEnemyTask.gd"
+}, {
+"base": "Operator",
+"class": "NavigateToOperator",
+"language": "GDScript",
+"path": "res://scripts/HTN/operators/NavigateToOperator.gd"
 }, {
 "base": "Transition",
 "class": "NavigatedToDoorTransition",
@@ -188,6 +223,11 @@ _global_script_classes=[ {
 "class": "NearPrecondition",
 "language": "GDScript",
 "path": "res://scripts/BT/Preconditions/NearPrecondition.gd"
+}, {
+"base": "Reference",
+"class": "Operator",
+"language": "GDScript",
+"path": "res://scripts/HTN/Operator.gd"
 }, {
 "base": "Composite",
 "class": "Parallel",
@@ -233,6 +273,11 @@ _global_script_classes=[ {
 "class": "Primitive",
 "language": "GDScript",
 "path": "res://scripts/BT/Primitive.gd"
+}, {
+"base": "Reference",
+"class": "PrimitiveTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/PrimitiveTask.gd"
 }, {
 "base": "Decorator",
 "class": "RepeatFilter",
@@ -293,12 +338,14 @@ _global_script_class_icons={
 "AttackAction": "",
 "AttackEnemyGoapAction": "",
 "AttackEnemyState": "",
+"BeGuardTask": "",
 "Behaviour": "",
 "BehaviourTree": "",
 "CombatBehaviourTree": "",
 "CompletedActionsTransition": "",
 "ComplexBehaviourTree": "",
 "Composite": "",
+"CompoundTask": "",
 "Condition": "",
 "Decorator": "",
 "EnemyAppearedTransition": "",
@@ -310,9 +357,14 @@ _global_script_class_icons={
 "GoapAgent": "",
 "GoapPlanner": "",
 "GoapStateMachine": "",
+"HTNPlanner": "",
+"HTNRunnner": "",
+"HTNSensor": "",
 "HierarchicalStateMachine": "",
 "NavigateAction": "",
 "NavigateToBehaviourTree": "",
+"NavigateToEnemyTask": "",
+"NavigateToOperator": "",
 "NavigatedToDoorTransition": "",
 "NavigatedToSafeTransition": "",
 "NavigationCompletedTransition": "",
@@ -321,6 +373,7 @@ _global_script_class_icons={
 "NavigationState": "",
 "NearCondition": "",
 "NearPrecondition": "",
+"Operator": "",
 "Parallel": "",
 "PatrolBehaviourTree": "",
 "PatrolDoorState": "",
@@ -330,6 +383,7 @@ _global_script_class_icons={
 "PlanningState": "",
 "Precondition": "",
 "Primitive": "",
+"PrimitiveTask": "",
 "RepeatFilter": "",
 "Selector": "",
 "Sequence": "",
@@ -345,7 +399,7 @@ _global_script_class_icons={
 [application]
 
 config/name="AI Behaviour Testbed"
-run/main_scene="res://scenes/BehaviourTests/GOAPTest.tscn"
+run/main_scene="res://scenes/BehaviourTests/HTNTest.tscn"
 config/icon="res://icon.png"
 
 [rendering]
