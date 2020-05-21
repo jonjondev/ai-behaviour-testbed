@@ -22,4 +22,7 @@ func ai_process():
 		behaviour_algorithm.tick()
 
 func is_near(target):
-	return target and translation.distance_to(target.translation) < 0.2
+	return target and distance_to(target) < 0.2
+
+func distance_to(target):
+	return translation.distance_to(target.translation)
