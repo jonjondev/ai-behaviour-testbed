@@ -1,6 +1,6 @@
 class_name CompoundTask
 
-var subtasks: Array
+var method_tasks
 
-func find_satisfied_method(working_worldstate: Array) -> Array:
-	return subtasks
+func find_satisfied_method(_working_worldstate: Array, cached_method: int) -> int:
+	return -1
