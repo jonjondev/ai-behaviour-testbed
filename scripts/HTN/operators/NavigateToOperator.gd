@@ -1,8 +1,9 @@
 class_name NavigateToOperator
 extends Operator
 
-func operate(owner, target) -> bool:
+func operate(owner, target = null, param = null) -> bool:
 	if owner.is_near(target):
+		owner.navigation.target = null
 		return true
 	owner.navigation.target = target
 	return false

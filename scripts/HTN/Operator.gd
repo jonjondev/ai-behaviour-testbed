@@ -1,4 +1,4 @@
 class_name Operator
 
-func operate(owner, value) -> bool:
+func operate(owner, value = null, params = null) -> bool:
 	return false
