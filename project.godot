@@ -50,6 +50,11 @@ _global_script_classes=[ {
 "path": "res://scripts/(H)FSM/states/AttackEnemyState.gd"
 }, {
 "base": "CompoundTask",
+"class": "AttackEnemyTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/tasks/AttackEnemyTask.gd"
+}, {
+"base": "CompoundTask",
 "class": "BeGuardTask",
 "language": "GDScript",
 "path": "res://scripts/HTN/tasks/BeGuardTask.gd"
@@ -98,6 +103,11 @@ _global_script_classes=[ {
 "class": "Decorator",
 "language": "GDScript",
 "path": "res://scripts/BT/Decorator.gd"
+}, {
+"base": "PrimitiveTask",
+"class": "DoEnemyAttackTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/tasks/DoEnemyAttackTask.gd"
 }, {
 "base": "Transition",
 "class": "EnemyAppearedTransition",
@@ -175,6 +185,11 @@ _global_script_classes=[ {
 "path": "res://scripts/BT/BehaviourTrees/NavigateToBehaviourTree.gd"
 }, {
 "base": "PrimitiveTask",
+"class": "NavigateToDoorTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/tasks/NavigateToDoorTask.gd"
+}, {
+"base": "PrimitiveTask",
 "class": "NavigateToEnemyTask",
 "language": "GDScript",
 "path": "res://scripts/HTN/tasks/NavigateToEnemyTask.gd"
@@ -183,6 +198,16 @@ _global_script_classes=[ {
 "class": "NavigateToOperator",
 "language": "GDScript",
 "path": "res://scripts/HTN/operators/NavigateToOperator.gd"
+}, {
+"base": "PrimitiveTask",
+"class": "NavigateToSafeTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/tasks/NavigateToSafeTask.gd"
+}, {
+"base": "PrimitiveTask",
+"class": "NavigateToWeaponTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/tasks/NavigateToWeaponTask.gd"
 }, {
 "base": "Transition",
 "class": "NavigatedToDoorTransition",
@@ -259,6 +284,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/GOAP/actions/PickupWeaponGoapAction.gd"
 }, {
+"base": "PrimitiveTask",
+"class": "PickupWeaponTask",
+"language": "GDScript",
+"path": "res://scripts/HTN/tasks/PickupWeaponTask.gd"
+}, {
 "base": "State",
 "class": "PlanningState",
 "language": "GDScript",
@@ -319,6 +349,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/(H)FSM/Transition.gd"
 }, {
+"base": "Operator",
+"class": "UseObjectOperator",
+"language": "GDScript",
+"path": "res://scripts/HTN/operators/UseObjectOperator.gd"
+}, {
 "base": "Condition",
 "class": "VisibleCondition",
 "language": "GDScript",
@@ -338,6 +373,7 @@ _global_script_class_icons={
 "AttackAction": "",
 "AttackEnemyGoapAction": "",
 "AttackEnemyState": "",
+"AttackEnemyTask": "",
 "BeGuardTask": "",
 "Behaviour": "",
 "BehaviourTree": "",
@@ -348,6 +384,7 @@ _global_script_class_icons={
 "CompoundTask": "",
 "Condition": "",
 "Decorator": "",
+"DoEnemyAttackTask": "",
 "EnemyAppearedTransition": "",
 "EnemyDisappearedTransition": "",
 "FullStateMachine": "",
@@ -363,8 +400,11 @@ _global_script_class_icons={
 "HierarchicalStateMachine": "",
 "NavigateAction": "",
 "NavigateToBehaviourTree": "",
+"NavigateToDoorTask": "",
 "NavigateToEnemyTask": "",
 "NavigateToOperator": "",
+"NavigateToSafeTask": "",
+"NavigateToWeaponTask": "",
 "NavigatedToDoorTransition": "",
 "NavigatedToSafeTransition": "",
 "NavigationCompletedTransition": "",
@@ -380,6 +420,7 @@ _global_script_class_icons={
 "PatrolMetaState": "",
 "PatrolSafeState": "",
 "PickupWeaponGoapAction": "",
+"PickupWeaponTask": "",
 "PlanningState": "",
 "Precondition": "",
 "Primitive": "",
@@ -392,6 +433,7 @@ _global_script_class_icons={
 "State": "",
 "StateMachine": "",
 "Transition": "",
+"UseObjectOperator": "",
 "VisibleCondition": "",
 "VisiblePrecondition": ""
 }
