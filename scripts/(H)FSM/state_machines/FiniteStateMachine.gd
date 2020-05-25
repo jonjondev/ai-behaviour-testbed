@@ -1,4 +1,4 @@
-class_name FullStateMachine
+class_name FiniteStateMachine
 extends StateMachine
 
 func _init(o).(o):

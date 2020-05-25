@@ -125,7 +125,7 @@ _global_script_classes=[ {
 "path": "res://scripts/(H)FSM/transitions/EnemyDisappearedTransition.gd"
 }, {
 "base": "StateMachine",
-"class": "FullStateMachine",
+"class": "FiniteStateMachine",
 "language": "GDScript",
 "path": "res://scripts/(H)FSM/state_machines/FiniteStateMachine.gd"
 }, {
@@ -413,7 +413,7 @@ _global_script_class_icons={
 "DoSwordAttackTask": "",
 "EnemyAppearedTransition": "",
 "EnemyDisappearedTransition": "",
-"FullStateMachine": "",
+"FiniteStateMachine": "",
 "GeneratedPlanTransition": "",
 "GetVarAction": "",
 "GoapAction": "",
@@ -471,7 +471,7 @@ _global_script_class_icons={
 [application]
 
 config/name="AI Behaviour Testbed"
-run/main_scene="res://scenes/BehaviourTests/HTNTest.tscn"
+run/main_scene="res://scenes/BehaviourTests/MainTest.tscn"
 config/icon="res://icon.png"
 
 [rendering]
