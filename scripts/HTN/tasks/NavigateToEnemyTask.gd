@@ -5,7 +5,7 @@ func _init():
 	operator = NavigateToOperator.new()
 	effects = {}
 
-func precondition_valid(working_worldstate: Array) -> bool:
+func precondition_valid(_working_worldstate: Array) -> bool:
 	return true
 
 func operate(owner) -> bool:

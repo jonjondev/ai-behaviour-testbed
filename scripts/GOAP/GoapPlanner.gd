@@ -2,8 +2,8 @@ class_name GoapPlanner
 
 enum StateConditions {
 	ENEMY_ALIVE,
-	WEAPON_AVAILABLE,
-	WEAPON_ACQUIRED,
+	SWORD_AVAILABLE,
+	SWORD_ACQUIRED,
 }
 
 var agent_profile

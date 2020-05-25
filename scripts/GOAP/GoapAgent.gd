@@ -6,7 +6,7 @@ var goal_state = {
 
 var actions = [
 	AttackEnemyGoapAction,
-	PickupWeaponGoapAction,
+	PickupSwordGoapAction,
 ]
 
 func _init(owner):

@@ -25,6 +25,6 @@ func on_exit():
 func generate_current_state():
 	var current_state = blank_state.duplicate()
 	current_state[GoapPlanner.StateConditions.ENEMY_ALIVE] = owner.get_tree().get_nodes_in_group("enemy")[0].visible
-	current_state[GoapPlanner.StateConditions.WEAPON_AVAILABLE] = owner.get_tree().get_nodes_in_group("weapon")[0].visible
-	current_state[GoapPlanner.StateConditions.WEAPON_ACQUIRED] = owner.blackboard.get("weapon") == true
+	current_state[GoapPlanner.StateConditions.SWORD_AVAILABLE] = owner.get_tree().get_nodes_in_group("sword")[0].visible
+	current_state[GoapPlanner.StateConditions.SWORD_ACQUIRED] = owner.blackboard.get("sword") == true
 	return current_state

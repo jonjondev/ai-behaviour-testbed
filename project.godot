@@ -205,7 +205,7 @@ _global_script_classes=[ {
 "path": "res://scripts/HTN/tasks/NavigateToSafeTask.gd"
 }, {
 "base": "PrimitiveTask",
-"class": "NavigateToWeaponTask",
+"class": "NavigateToSwordTask",
 "language": "GDScript",
 "path": "res://scripts/HTN/tasks/NavigateToWeaponTask.gd"
 }, {
@@ -280,12 +280,12 @@ _global_script_classes=[ {
 "path": "res://scripts/(H)FSM/states/PatrolSafeState.gd"
 }, {
 "base": "GoapAction",
-"class": "PickupWeaponGoapAction",
+"class": "PickupSwordGoapAction",
 "language": "GDScript",
 "path": "res://scripts/GOAP/actions/PickupWeaponGoapAction.gd"
 }, {
 "base": "PrimitiveTask",
-"class": "PickupWeaponTask",
+"class": "PickupSwordTask",
 "language": "GDScript",
 "path": "res://scripts/HTN/tasks/PickupWeaponTask.gd"
 }, {
@@ -404,7 +404,7 @@ _global_script_class_icons={
 "NavigateToEnemyTask": "",
 "NavigateToOperator": "",
 "NavigateToSafeTask": "",
-"NavigateToWeaponTask": "",
+"NavigateToSwordTask": "",
 "NavigatedToDoorTransition": "",
 "NavigatedToSafeTransition": "",
 "NavigationCompletedTransition": "",
@@ -419,8 +419,8 @@ _global_script_class_icons={
 "PatrolDoorState": "",
 "PatrolMetaState": "",
 "PatrolSafeState": "",
-"PickupWeaponGoapAction": "",
-"PickupWeaponTask": "",
+"PickupSwordGoapAction": "",
+"PickupSwordTask": "",
 "PlanningState": "",
 "Precondition": "",
 "Primitive": "",

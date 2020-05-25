@@ -3,8 +3,8 @@ class_name PrimitiveTask
 var operator: Operator
 var effects: Dictionary
 
-func precondition_valid(working_worldstate: Array) -> bool:
+func precondition_valid(_working_worldstate: Array) -> bool:
 	return false
 
-func operate(owner) -> bool:
+func operate(_owner) -> bool:
 	return false

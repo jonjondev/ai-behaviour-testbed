@@ -34,8 +34,8 @@ func generate_plan(worldstate) -> Array:
 				restore_to_last_decomposed_task()
 	return final_plan
 
-func apply_effects(working_worldstate, effects):
-	var new_state = working_worldstate.duplicate()
+func apply_effects(worldstate, effects):
+	var new_state = worldstate.duplicate()
 	for effect in effects.keys():
 		new_state[effect] = effects[effect]
 	return new_state

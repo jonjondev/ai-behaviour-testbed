@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/Components/Agent.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Components/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Components/Safe.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/Components/Weapon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Components/Sword.tscn" type="PackedScene" id=8]
 
 [node name="Spatial" instance=ExtResource( 3 )]
 
@@ -27,7 +27,7 @@ script = ExtResource( 1 )
 wait_time = 5.0
 autostart = true
 
-[node name="Weapon" parent="." index="5" instance=ExtResource( 8 )]
+[node name="Sword" parent="." index="5" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86053, 0.529552, 3.65909 )
 
 [node name="Door" parent="." index="6" instance=ExtResource( 6 )]
