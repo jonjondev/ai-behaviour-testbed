@@ -3,7 +3,7 @@ extends CompoundTask
 
 func _init():
 	method_tasks = [
-		[AttackEnemyTask.new()],
+		[PlanEnemyAttackTask.new()],
 		[NavigateToDoorTask.new(), NavigateToSafeTask.new()],
 	]
 

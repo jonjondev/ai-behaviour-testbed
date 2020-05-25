@@ -3,14 +3,14 @@ extends CompoundTask
 
 func _init():
 	method_tasks = [
-		[NavigateToEnemyTask.new(), DoEnemyAttackTask.new()],
-		[NavigateToSwordTask.new(), PickupSwordTask.new(), self],
+		[DoGunAttackTask.new()],
+		[NavigateToEnemyTask.new(), DoSwordAttackTask.new()],
 	]
 
 func find_satisfied_method(working_worldstate: Array, cached_method: int) -> int:
-	if (cached_method != 0) and working_worldstate[HTNSensor.WorldStateProperties.SWORD_ACQUIRED] == true:
+	if (cached_method != 0 and cached_method != 1) and working_worldstate[HTNSensor.WorldStateProperties.GUN_ACQUIRED] == true:
 		return 0
-	elif (cached_method != 1):
+	elif (cached_method != 1) and working_worldstate[HTNSensor.WorldStateProperties.SWORD_ACQUIRED] == true:
 		return 1
 	else:
 		return -1

@@ -1,4 +1,4 @@
-class_name DoEnemyAttackTask
+class_name DoSwordAttackTask
 extends PrimitiveTask
 
 func _init():

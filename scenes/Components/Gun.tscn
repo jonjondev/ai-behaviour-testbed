@@ -7,7 +7,7 @@
 extents = Vector3( 0.110203, 0.0712948, 0.0490149 )
 
 [node name="Gun" type="Spatial" groups=[
-"sword",
+"gun",
 "target",
 ]]
 script = ExtResource( 2 )
